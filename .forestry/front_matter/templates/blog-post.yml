@@ -5,12 +5,24 @@ fields:
 - type: text
   name: author
   label: author
+  default: Greg Miller
+  config:
+    required: true
 - type: datetime
   name: datetime
   label: datetime
+  default: now
+  config:
+    required: true
 - type: text
   name: title
   label: title
+  hidden: false
+  config:
+    required: true
+    min: 10
+    max: 10
+  default: DevCharms
 - type: text
   name: slug
   label: slug
@@ -29,3 +41,5 @@ fields:
 - type: text
   name: description
   label: description
+  config:
+    required: true
