@@ -38,14 +38,14 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "LinkedIn",
-    href: "https://github.com/shrinkray/devcharms",
-    linkTitle: `${SITE.title} on LinkedIn`,
+    href: "https://www.linkedin.com/in/gregraymiller/",
+    linkTitle: `${SITE.author} on LinkedIn`,
     active: true,
   },
   {
     name: "Mail",
     href: "mailto:toledogeeks@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `Send an email to ${SITE.author}`,
     active: false,
   },
   {
@@ -92,8 +92,8 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "CodePen",
-    href: "https://github.com/shrinkray/devcharms",
-    linkTitle: `${SITE.title} on CodePen`,
+    href: "https://codepen.io/shrinkray",
+    linkTitle: `${SITE.author} on CodePen`,
     active: false,
   },
   {
