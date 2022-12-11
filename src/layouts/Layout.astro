@@ -60,6 +60,18 @@ const socialImageURL = new URL(
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-66LW6F7RYC"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-66LW6F7RYC");
+    </script>
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>
