@@ -45,3 +45,5 @@ fields:
   label: description
   config:
     required: true
+pages:
+- src/contents/dummy-post.md
