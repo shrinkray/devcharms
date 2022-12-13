@@ -3,7 +3,7 @@ datetime: 2022-12-13T11:54:37-05:00
 author: Greg Miller
 title: Dummy post
 slug: dummy-post
-featured: false
+featured: true
 draft: false
 tags:
 - test
