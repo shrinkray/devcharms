@@ -5,12 +5,24 @@ fields:
 - type: text
   name: author
   label: author
+  config:
+    required: true
+    max: 
+    min: 
+  default: ''
+  showOnly:
+    value: true
 - type: datetime
   name: datetime
   label: datetime
+  default: now
+  config:
+    required: true
 - type: text
   name: title
   label: title
+  config:
+    required: true
 - type: text
   name: slug
   label: slug
@@ -29,3 +41,5 @@ fields:
 - type: text
   name: description
   label: description
+  config:
+    required: true
