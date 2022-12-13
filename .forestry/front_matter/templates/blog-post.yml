@@ -26,6 +26,8 @@ fields:
 - type: text
   name: slug
   label: slug
+  config:
+    required: true
 - type: boolean
   name: featured
   label: featured
