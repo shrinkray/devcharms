@@ -4,7 +4,7 @@ author: Greg Miller
 title: Dummy post
 slug: dummy-post
 featured: false
-draft: true
+draft: false
 tags:
 - test
 ogImage: ''
