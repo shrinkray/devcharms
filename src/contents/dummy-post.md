@@ -15,15 +15,15 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 
     ```js
     // file: src/config.ts
-	export const SITE = {
-  	website: "https://astro-paper.pages.dev/",
-  	author: "Sat Naing",
-  	desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  	title: "AstroPaper",
-  	ogImage: "astropaper-og.jpg",
-  	lightAndDarkMode: true, // true by default
-  	postPerPage: 3,
-};
+		export const SITE = {
+  		website: "https://astro-paper.pages.dev/",
+  		author: "Sat Naing",
+  		desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  		title: "AstroPaper",
+  		ogImage: "astropaper-og.jpg",
+  		lightAndDarkMode: true, // true by default
+  		postPerPage: 3,
+ 		};
     ```
 
 ![](https://res.cloudinary.com/shrinkray-interactive-llc/v1670949900/dev-charms/soss-gimble_ht7r4n.png)
