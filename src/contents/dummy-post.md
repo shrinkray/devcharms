@@ -23,7 +23,8 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
       ogImage: "astropaper-og.jpg",
       lightAndDarkMode: true, // true by default
       postPerPage: 3,
-    };```
+    };
+    ```
 
 ![](https://res.cloudinary.com/shrinkray-interactive-llc/v1670949900/dev-charms/soss-gimble_ht7r4n.png)
 
