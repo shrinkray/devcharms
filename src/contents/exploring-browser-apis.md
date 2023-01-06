@@ -13,3 +13,4 @@ description: The life of websites is the content it derives from itself and else
   This course will provide a guide to code a variety of standalone API applications.
 
 ---
+While I may not cover every API built in this course, I will highlight inspirations and share snippets of learned techniques. 
