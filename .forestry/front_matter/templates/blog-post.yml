@@ -47,3 +47,4 @@ fields:
     required: true
 pages:
 - src/contents/dummy-post.md
+- src/contents/exploring-browser-apis.md
