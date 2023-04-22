@@ -20,3 +20,7 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 .idea/
+node_modules
+
+public/admin/index.html
+public/admin/assets
