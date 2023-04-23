@@ -3,7 +3,7 @@
   "version": "1.2.1",
   "private": false,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
