@@ -4,8 +4,8 @@
   "private": false,
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
-    "start": "tinacms build && astro start",
-    "build": "tinacms build && astro build",
+    "start": "tinacms dev -c \"astro start\"",
+    "build": "tinacms dev -c \"astro build\"",
     "preview": "astro preview",
     "astro": "astro",
     "format:check": "prettier --check .",
