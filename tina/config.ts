@@ -1,26 +1,13 @@
-
-import * as dotenv from "dotenv";
 import { defineConfig } from "tinacms";
 import { blog_postFields } from "./templates";
 
-// Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
-
-dotenv.config();
-
-const CLIENT_ID: string = process.env.CLIENT_ID || "";
-const TOKEN: string = process.env.TOKEN || "";
-
-if (!CLIENT_ID || !TOKEN) {
-  console.error("Environment variables are missing. Please check your .env file.");
-  process.exit(1);
-}
-export { CLIENT_ID, TOKEN };
-
-export default defineConfig({
-  branch,
-  clientId: CLIENT_ID, // Get this from tina.io
-  token: TOKEN, // Get this from tina.io
+const config = defineConfig({
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
+  branch:
+      process.env.ASTRO_PUBLIC_TINA_BRANCH! || // custom branch env override
+      process.env.ASTRO_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
+      process.env.HEAD!, // Netlify branch env
+  token: process.env.TINA_TOKEN!,
   client: { skip: true },
   build: {
     outputFolder: "admin",
@@ -56,3 +43,5 @@ export default defineConfig({
     ],
   },
 });
+
+export default config;
