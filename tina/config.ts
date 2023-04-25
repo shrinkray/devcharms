@@ -1,20 +1,24 @@
 
 import { defineConfig } from "tinacms";
 import { blog_postFields } from "./templates";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 dotenv.config();
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
-const config = {
-  clientID: process.env.CLIENT_ID || "",
-  clientToken: process.env.TOKEN || "",
-};
+const CLIENT_ID: string = process.env.CLIENT_ID || "";
+const TOKEN: string = process.env.TOKEN || "";
+
+if (!CLIENT_ID || !TOKEN) {
+  console.error("Environment variables are missing. Please check your .env file.");
+  process.exit(1);
+}
+export { CLIENT_ID, TOKEN };
 
 export default defineConfig({
   branch,
-  clientId: config.clientID, // Get this from tina.io
-  token: config.clientToken, // Get this from tina.io
+  clientId: CLIENT_ID, // Get this from tina.io
+  token: TOKEN, // Get this from tina.io
   client: { skip: true },
   build: {
     outputFolder: "admin",
