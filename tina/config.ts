@@ -1,11 +1,13 @@
 
+import * as dotenv from "dotenv";
 import { defineConfig } from "tinacms";
 import { blog_postFields } from "./templates";
-import * as dotenv from "dotenv";
-dotenv.config();
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+
+dotenv.config();
+
 const CLIENT_ID: string = process.env.CLIENT_ID || "";
 const TOKEN: string = process.env.TOKEN || "";
 
