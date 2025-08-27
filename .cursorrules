@@ -71,7 +71,7 @@ This is an Astro-based blog and portfolio website using the AstroPaper theme wit
 ### Data Handling
 - Use `Astro.props` for passing data to components
 - Implement `getStaticPaths()` for fetching data at build time
-- Use `Astro.glob()` for working with local files efficiently
+- Use `import.meta.glob()` for working with local files efficiently (preferred over deprecated `Astro.glob()`)
 - Follow the existing utility functions in `src/utils/`
 
 ## Development Workflow
