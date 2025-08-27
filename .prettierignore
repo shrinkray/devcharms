@@ -1,12 +1,31 @@
-# Ignore everything
-/*
+# Image files
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.webp
+*.bmp
 
-# Except these files & folders
-!/src
-!/public
-!/.github
-!tsconfig.json
-!astro.config.mjs
-!package.json
-!.prettierrc
-!.eslintrc.json
+# Binary files
+*.pdf
+*.zip
+*.tar.gz
+
+# Configuration files that Prettier can't parse
+.cursorrules
+.prettierignore
+
+# Build outputs
+dist/
+.astro/
+node_modules/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+.env.production
