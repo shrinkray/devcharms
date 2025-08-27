@@ -3,18 +3,18 @@ import type { SocialObjects } from "./types";
 export const SITE = {
   website: "https://www.devcharms.com",
   author: "Greg Miller",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  desc: "DevCharms - A software development blog and portfolio showcasing custom software solutions and development insights.",
   title: "DevCharms",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "devcharms-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
 };
 
 export const LOGO_IMAGE = {
-  enable: false,
+  enable: true,
   svg: true,
-  width: 216,
-  height: 46,
+  width: 120,
+  height: 40,
 };
 
 export const SOCIALS: SocialObjects = [
@@ -28,13 +28,13 @@ export const SOCIALS: SocialObjects = [
     name: "Facebook",
     href: "https://github.com/shrinkray/devcharms",
     linkTitle: `${SITE.title} on Facebook`,
-    active: true,
+    active: false,
   },
   {
     name: "Instagram",
     href: "https://github.com/shrinkray/devcharms",
     linkTitle: `${SITE.title} on Instagram`,
-    active: true,
+    active: false,
   },
   {
     name: "LinkedIn",
