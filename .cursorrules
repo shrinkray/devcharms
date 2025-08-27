@@ -1,7 +1,7 @@
 # Cursor Rules for DevCharms Astro Blog
 
 ## Project Overview
-This is an Astro-based blog and portfolio website using the AstroPaper theme with Tailwind CSS styling.
+This is an Astro-based blog and portfolio website for DevCharms, built with modern web technologies including Tailwind CSS styling.
 
 ## Code Style and Standards
 
@@ -105,11 +105,3 @@ This is an Astro-based blog and portfolio website using the AstroPaper theme wit
 ## Common Patterns to Follow
 - Blog posts use the `PostDetails.astro` layout
 - Tags are handled through the tag system in `src/pages/tags/`
-- Search functionality is implemented in the `Search.tsx` component
-- Social icons and navigation follow the established patterns
-
-## When in Doubt
-- Check existing implementations in the codebase
-- Follow Astro's official documentation for best practices
-- Maintain consistency with the current design and functionality
-- Prioritize user experience and performance
