@@ -43,6 +43,12 @@ module.exports = {
         fill: withOpacity("--color-accent"),
       },
     },
+    ringColor: {
+      skin: {
+        accent: withOpacity("--color-accent"),
+        base: withOpacity("--color-text-base"),
+      },
+    },
     borderColor: {
       skin: {
         line: withOpacity("--color-border"),
@@ -61,7 +67,5 @@ module.exports = {
       mono: ["IBM Plex Mono", "monospace"],
     },
   },
-  plugins: [
-    require("@tailwindcss/typography")
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
