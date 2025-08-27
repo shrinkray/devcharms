@@ -1,0 +1,115 @@
+# Cursor Rules for DevCharms Astro Blog
+
+## Project Overview
+This is an Astro-based blog and portfolio website using the AstroPaper theme with Tailwind CSS styling.
+
+## Code Style and Standards
+
+### General Principles
+- Write concise, technical responses with accurate Astro examples
+- Leverage Astro's partial hydration and multi-framework support effectively
+- Prioritize static generation and minimal JavaScript for optimal performance
+- Use descriptive variable names and follow Astro's naming conventions
+- Organize files using Astro's file-based routing system
+
+### File Organization
+- Use the recommended Astro project structure:
+  - `src/components/` - Reusable UI components
+  - `src/layouts/` - Page layouts and templates
+  - `src/pages/` - Route pages and dynamic routes
+  - `src/styles/` - Global styles and CSS
+  - `src/contents/` - Markdown content files
+  - `src/utils/` - Utility functions and helpers
+
+## Astro-Specific Rules
+
+### Component Development
+- Create `.astro` files for Astro components
+- Use framework-specific components (React, Vue, Svelte) when necessary
+- Implement proper component composition and reusability
+- Use Astro's component props for data passing
+- Leverage Astro's built-in components like `<Markdown />` when appropriate
+
+### Routing and Pages
+- Utilize Astro's file-based routing system in the `src/pages/` directory
+- Implement dynamic routes using `[...slug].astro` syntax
+- Use `getStaticPaths()` for generating static pages with dynamic routes
+- Implement proper 404 handling with a `404.astro` page
+
+### Content Management
+- Use Markdown (`.md`) files for blog posts in `src/contents/`
+- Leverage Astro's built-in support for frontmatter in Markdown files
+- Follow the existing content structure for blog posts
+
+### Styling
+- Use Tailwind CSS utility classes extensively
+- Leverage Tailwind's responsive design utilities (`sm:`, `md:`, `lg:`, etc.)
+- Utilize Tailwind's color palette and spacing scale for consistency
+- Never use the `@apply` directive
+- Use Astro's scoped styling with `<style>` tags when needed
+
+## Project-Specific Rules
+
+### Blog Post Structure
+- Follow the existing format in `src/contents/` for new blog posts
+- Include proper frontmatter with title, description, tags, and publish date
+- Use descriptive filenames that match the post slug
+
+### Component Usage
+- Use existing components from `src/components/` when possible
+- Follow the established patterns for cards, tags, and navigation
+- Maintain consistency with the current design system
+
+### Performance
+- Minimize use of client-side JavaScript; leverage Astro's static generation
+- Use the `client:*` directives judiciously for partial hydration:
+  - `client:load` for immediately needed interactivity
+  - `client:idle` for non-critical interactivity
+  - `client:visible` for components that should hydrate when visible
+- Implement proper lazy loading for images and other assets
+
+### Data Handling
+- Use `Astro.props` for passing data to components
+- Implement `getStaticPaths()` for fetching data at build time
+- Use `Astro.glob()` for working with local files efficiently
+- Follow the existing utility functions in `src/utils/`
+
+## Development Workflow
+
+### Before Making Changes
+- Check existing components and patterns in the codebase
+- Follow the established file structure and naming conventions
+- Ensure new features integrate with the existing blog functionality
+
+### Code Quality
+- Use TypeScript for enhanced type safety
+- Implement proper error handling and logging
+- Follow Astro's Style Guide for consistent code formatting
+- Write self-documenting code with clear variable names
+
+### Testing and Validation
+- Test changes in the development environment
+- Ensure responsive design works across different screen sizes
+- Verify that blog functionality remains intact
+
+## File Naming Conventions
+- Use kebab-case for file names (e.g., `blog-post-title.md`)
+- Use PascalCase for component names (e.g., `BlogCard.astro`)
+- Use camelCase for utility functions and variables
+
+## Dependencies and Integrations
+- The project uses Tailwind CSS for styling
+- Tina CMS integration is available for content management
+- Follow the existing configuration in `astro.config.mjs` and `tailwind.config.cjs`
+
+## Common Patterns to Follow
+- Blog posts use the `PostDetails.astro` layout
+- Tags are handled through the tag system in `src/pages/tags/`
+- Search functionality is implemented in the `Search.tsx` component
+- Social icons and navigation follow the established patterns
+
+## When in Doubt
+- Check existing implementations in the codebase
+- Follow Astro's official documentation for best practices
+- Maintain consistency with the current design and functionality
+- Prioritize user experience and performance
