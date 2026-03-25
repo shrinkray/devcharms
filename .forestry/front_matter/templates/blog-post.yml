@@ -2,47 +2,47 @@
 label: Blog post
 hide_body: false
 fields:
-- type: text
-  name: author
-  label: author
-  config:
-    required: true
-    max: 
-    min: 
-  default: ''
-  showOnly:
-    value: true
-- type: datetime
-  name: datetime
-  label: datetime
-  default: now
-  config:
-    required: true
-- type: text
-  name: title
-  label: title
-  config:
-    required: true
-- type: text
-  name: slug
-  label: slug
-  config:
-    required: true
-- type: boolean
-  name: featured
-  label: featured
-- type: boolean
-  name: draft
-  label: draft
-- type: list
-  name: tags
-  label: tags
-- type: text
-  name: ogImage
-  label: ogImage
-- type: text
-  name: description
-  label: description
-  config:
-    required: true
+  - type: text
+    name: author
+    label: author
+    config:
+      required: true
+      max:
+      min:
+    default: ""
+    showOnly:
+      value: true
+  - type: datetime
+    name: datetime
+    label: datetime
+    default: now
+    config:
+      required: true
+  - type: text
+    name: title
+    label: title
+    config:
+      required: true
+  - type: text
+    name: slug
+    label: slug
+    config:
+      required: true
+  - type: boolean
+    name: featured
+    label: featured
+  - type: boolean
+    name: draft
+    label: draft
+  - type: list
+    name: tags
+    label: tags
+  - type: text
+    name: ogImage
+    label: ogImage
+  - type: text
+    name: description
+    label: description
+    config:
+      required: true
 pages:

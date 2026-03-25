@@ -11,7 +11,7 @@
     import RefreshRuntime from "http://localhost:4001/@react-refresh";
     RefreshRuntime.injectIntoGlobalHook(window);
     window.$RefreshReg$ = () => {};
-    window.$RefreshSig$ = () => type => type;
+    window.$RefreshSig$ = () => (type) => type;
     window.__vite_plugin_react_preamble_installed__ = true;
   </script>
   <script type="module" src="http://localhost:4001/@vite/client"></script>
