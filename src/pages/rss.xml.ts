@@ -12,8 +12,8 @@ const postImportResult = import.meta.glob<MarkdownInstance<Frontmatter>>(
 );
 const posts = Object.values(postImportResult);
 
-export const get = () =>
-  rss({
+export const GET = async () => {
+  const { body } = await rss({
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
@@ -26,3 +26,7 @@ export const get = () =>
         pubDate: new Date(frontmatter.datetime),
       })),
   });
+  return new Response(body, {
+    headers: { "Content-Type": "application/xml; charset=utf-8" },
+  });
+};
