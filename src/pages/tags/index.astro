@@ -11,7 +11,7 @@ import type { Frontmatter } from "src/types";
 
 const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
   "../../contents/**/*.md",
-  { eager: true }
+  { eager: true },
 );
 const posts = Object.values(postModules);
 
@@ -22,7 +22,7 @@ let tags = getUniqueTags(posts);
   <Header activeNav="tags" />
   <Main pageTitle="Tags" pageDesc="All the tags used in posts.">
     <ul>
-      {tags.map(tag => <Tag name={tag} size="lg" />)}
+      {tags.map((tag) => <Tag name={tag} size="lg" />)}
     </ul>
   </Main>
   <Footer />

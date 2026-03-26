@@ -13,13 +13,13 @@ import Socials from "@components/Socials.astro";
 
 const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
   "../contents/**/*.md",
-  { eager: true }
+  { eager: true },
 );
 const posts = Object.values(postModules);
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(
-  ({ frontmatter }) => frontmatter.featured
+  ({ frontmatter }) => frontmatter.featured,
 );
 ---
 
@@ -105,7 +105,7 @@ const featuredPosts = sortedPosts.filter(
                   post={frontmatter}
                   secHeading={false}
                 />
-              )
+              ),
           )
         }
       </ul>

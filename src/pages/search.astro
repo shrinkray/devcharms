@@ -10,17 +10,17 @@ import type { Frontmatter } from "src/types";
 
 const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
   "../contents/**/*.md",
-  { eager: true }
+  { eager: true },
 );
 const posts = Object.values(postModules);
 
 // List of items to search in
 const searchList = posts
   .filter(({ frontmatter }) => !frontmatter.draft)
-  .map(post => ({
+  .map((post) => ({
     title: post.frontmatter.title,
     description: post.frontmatter.description,
-    headings: post.getHeadings().map(h => h.text),
+    headings: post.getHeadings().map((h) => h.text),
     frontmatter: post.frontmatter,
   }));
 ---

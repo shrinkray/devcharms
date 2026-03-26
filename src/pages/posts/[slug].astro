@@ -10,7 +10,7 @@ import slugify from "@utils/slugify";
 
 const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
   "../../contents/**/*.md",
-  { eager: true }
+  { eager: true },
 );
 const allPosts = Object.values(postModules);
 
@@ -35,15 +35,14 @@ type PagePaths = {
 
 export async function getStaticPaths() {
   const posts = Object.values(
-    import.meta.glob<MarkdownInstance<Frontmatter>>(
-      "../../contents/**/*.md",
-      { eager: true }
-    )
+    import.meta.glob<MarkdownInstance<Frontmatter>>("../../contents/**/*.md", {
+      eager: true,
+    }),
   );
 
   const filteredPosts = posts.filter(({ frontmatter }) => !frontmatter.draft);
 
-  let postResult: PostResult = filteredPosts.map(post => {
+  let postResult: PostResult = filteredPosts.map((post) => {
     return {
       params: {
         slug: slugify(post.frontmatter),
@@ -55,9 +54,9 @@ export async function getStaticPaths() {
   });
 
   const pagePaths: PagePaths = getPageNumbers(filteredPosts.length).map(
-    pageNum => ({
+    (pageNum) => ({
       params: { slug: String(pageNum) },
-    })
+    }),
   );
 
   return [...postResult, ...pagePaths];

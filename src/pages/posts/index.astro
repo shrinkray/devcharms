@@ -8,7 +8,7 @@ import type { Frontmatter } from "src/types";
 
 const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
   "../../contents/**/*.md",
-  { eager: true }
+  { eager: true },
 );
 const posts = Object.values(postModules);
 
