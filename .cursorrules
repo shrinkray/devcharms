@@ -45,20 +45,8 @@ This is an Astro-based blog and portfolio website for DevCharms, built with mode
 - Use Tailwind CSS utility classes extensively
 - Leverage Tailwind's responsive design utilities (`sm:`, `md:`, `lg:`, etc.)
 - Utilize Tailwind's color palette and spacing scale for consistency
-- Never use the `@apply` directive
+- Avoid using the `@apply` directive
 - Use Astro's scoped styling with `<style>` tags when needed
-
-## Project-Specific Rules
-
-### Blog Post Structure
-- Follow the existing format in `src/contents/` for new blog posts
-- Include proper frontmatter with title, description, tags, and publish date
-- Use descriptive filenames that match the post slug
-
-### Component Usage
-- Use existing components from `src/components/` when possible
-- Follow the established patterns for cards, tags, and navigation
-- Maintain consistency with the current design system
 
 ### Performance
 - Minimize use of client-side JavaScript; leverage Astro's static generation

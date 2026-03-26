@@ -6,16 +6,9 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Tag from "@components/Tag.astro";
 import getUniqueTags from "@utils/getUniqueTags";
-import type { MarkdownInstance } from "astro";
-import type { Frontmatter } from "src/types";
+import { allPosts } from "@utils/allPosts";
 
-const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../../contents/**/*.md",
-  { eager: true },
-);
-const posts = Object.values(postModules);
-
-let tags = getUniqueTags(posts);
+let tags = getUniqueTags(allPosts);
 ---
 
 <Layout title={`Tags | ${SITE.title}`}>

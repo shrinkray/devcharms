@@ -10,12 +10,7 @@ import getPostsByTag from "@utils/getPostsByTag";
 import type { MarkdownInstance } from "astro";
 import type { Frontmatter } from "src/types";
 import slugify from "@utils/slugify";
-
-const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../../contents/**/*.md",
-  { eager: true },
-);
-const allPosts = Object.values(postModules);
+import { allPosts } from "@utils/allPosts";
 
 export interface Props {
   post: MarkdownInstance<Frontmatter>;
@@ -23,13 +18,7 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  const posts = Object.values(
-    import.meta.glob<MarkdownInstance<Frontmatter>>("../../contents/**/*.md", {
-      eager: true,
-    }),
-  );
-
-  const tags = getUniqueTags(posts);
+  const tags = getUniqueTags(allPosts);
 
   return tags.map((tag) => {
     return {

@@ -7,12 +7,7 @@ import getPageNumbers from "@utils/getPageNumbers";
 import type { MarkdownInstance } from "astro";
 import type { Frontmatter } from "src/types";
 import slugify from "@utils/slugify";
-
-const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../../contents/**/*.md",
-  { eager: true },
-);
-const allPosts = Object.values(postModules);
+import { allPosts } from "@utils/allPosts";
 
 export interface Props {
   post: MarkdownInstance<Frontmatter>;
@@ -34,13 +29,9 @@ type PagePaths = {
 }[];
 
 export async function getStaticPaths() {
-  const posts = Object.values(
-    import.meta.glob<MarkdownInstance<Frontmatter>>("../../contents/**/*.md", {
-      eager: true,
-    }),
+  const filteredPosts = allPosts.filter(
+    ({ frontmatter }) => !frontmatter.draft,
   );
-
-  const filteredPosts = posts.filter(({ frontmatter }) => !frontmatter.draft);
 
   let postResult: PostResult = filteredPosts.map((post) => {
     return {

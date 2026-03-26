@@ -5,17 +5,9 @@ import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SearchBox from "@components/Search";
-import type { MarkdownInstance } from "astro";
-import type { Frontmatter } from "src/types";
+import { allPosts } from "@utils/allPosts";
 
-const postModules = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../contents/**/*.md",
-  { eager: true },
-);
-const posts = Object.values(postModules);
-
-// List of items to search in
-const searchList = posts
+const searchList = allPosts
   .filter(({ frontmatter }) => !frontmatter.draft)
   .map((post) => ({
     title: post.frontmatter.title,
