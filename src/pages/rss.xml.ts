@@ -3,8 +3,8 @@ import rss from "@astrojs/rss";
 import slugify from "@utils/slugify";
 import { allPosts } from "@utils/allPosts";
 
-export const GET = async () => {
-  const { body } = await rss({
+export const GET = async () =>
+  rss({
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
@@ -17,7 +17,3 @@ export const GET = async () => {
         pubDate: new Date(frontmatter.datetime),
       })),
   });
-  return new Response(body, {
-    headers: { "Content-Type": "application/xml; charset=utf-8" },
-  });
-};
