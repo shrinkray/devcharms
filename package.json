@@ -2,9 +2,13 @@
   "name": "devcharms",
   "version": "1.2.1",
   "private": false,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "dev:host": "astro dev --host",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
