@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Card from "@components/Card";
 import slugify from "@utils/slugify";
 import type { Frontmatter } from "src/types";
@@ -27,7 +27,7 @@ export default function SearchBar({ searchList }: Props) {
     null,
   );
 
-  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
     setInputVal(e.currentTarget.value);
   };
 
