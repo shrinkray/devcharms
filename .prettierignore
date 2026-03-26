@@ -1,7 +1,3 @@
-# Astro: Prettier 2 + prettier-plugin-astro has produced empty `.astro` files when running
-# `prettier --write .` on the repo. Format `.astro` in the editor or upgrade Prettier/plugin before removing.
-*.astro
-
 # Image files
 *.svg
 *.png

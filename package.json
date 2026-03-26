@@ -14,9 +14,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/rss": "^1.0.3",
+    "@astrojs/rss": "^4.0.17",
     "@types/react-dom": "^18.3.7",
-    "astro": "^5.13.4",
+    "astro": "^5.18.1",
     "dotenv": "^16.0.3",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
@@ -25,9 +25,9 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^1.2.0",
-    "@astrojs/react": "^3.6.3",
-    "@astrojs/sitemap": "^1.2.2",
+    "@astrojs/partytown": "^2.1.5",
+    "@astrojs/react": "^5.0.1",
+    "@astrojs/sitemap": "^3.7.1",
     "@astrojs/tailwind": "^6.0.2",
     "@tailwindcss/typography": "^0.5.16",
     "@types/dotenv": "^8.2.0",
@@ -37,7 +37,7 @@
     "cz-conventional-changelog": "^3.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
-    "prettier": "^2.8.7",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -48,6 +48,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,cjs,mjs,jsx,ts,tsx,json,css,md,yml,yaml}": "prettier --write"
+    "*.{js,cjs,mjs,jsx,ts,tsx,json,css,md,yml,yaml,astro}": "prettier --write"
   }
 }
