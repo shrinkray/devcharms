@@ -1,4 +1,3 @@
-import React from "react";
 import Datetime from "./Datetime";
 import type { Frontmatter } from "src/types";
 
