@@ -8,7 +8,7 @@ const logoSVG = "/assets/logoISO.svg";
 const logoSVGDark = "/assets/logoISOwh.svg";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
+  activeNav?: "posts" | "tags" | "about" | "charms" | "search";
 }
 
 const { activeNav } = Astro.props;
@@ -72,6 +72,11 @@ const { activeNav } = Astro.props;
         </li>
         <li>
           <a href="/tags" class={activeNav === "tags" ? "active" : ""}>Tags</a>
+        </li>
+        <li>
+          <a href="/charms" class={activeNav === "charms" ? "active" : ""}
+            >Charms</a
+          >
         </li>
         <li>
           <a href="/about" class={activeNav === "about" ? "active" : ""}

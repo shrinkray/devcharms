@@ -9,20 +9,26 @@ export interface Props {
   frontmatter: {
     title: string;
     description?: string;
+    /** Binds Header active state; defaults to About */
+    activeNav?: "about" | "charms";
+    /** Landmark id for #main-content section; defaults to "about" */
+    sectionId?: string;
   };
 }
 
 const { frontmatter } = Astro.props;
+const activeNav = frontmatter.activeNav ?? "about";
+const sectionId = frontmatter.sectionId ?? "about";
 ---
 
 <Layout
   title={`${frontmatter.title} | ${SITE.title}`}
   description={frontmatter.description}
 >
-  <Header activeNav="about" />
+  <Header activeNav={activeNav} />
   <Breadcrumbs />
   <main id="main-content">
-    <section id="about" class="mb-28 prose max-w-3xl prose-img:border-0">
+    <section id={sectionId} class="mb-28 prose max-w-3xl prose-img:border-0">
       <h1 class="text-2xl sm:text-3xl tracking-wider">{frontmatter.title}</h1>
       <slot />
     </section>
