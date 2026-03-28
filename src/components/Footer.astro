@@ -1,4 +1,5 @@
 ---
+import { SITE } from "src/config";
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
 
@@ -13,19 +14,39 @@ const { noMarginTop = false } = Astro.props;
 
 <footer class={`${noMarginTop ? "" : "mt-auto"}`}>
   <Hr noPadding />
+  <nav class="footer-nav max-w-3xl mx-auto px-4 w-full" aria-label="Site">
+    <ul class="footer-nav-list">
+      <li><a href="/posts">Posts</a></li>
+      <li><a href="/tags">Tags</a></li>
+      <li><a href="/charms">Charms</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/search">Search</a></li>
+      <li>
+        <a href="/rss.xml">RSS</a>
+      </li>
+    </ul>
+  </nav>
   <div class="footer-wrapper">
     <Socials centered />
-    <div class="copyright-wrapper">
-      <span>Copyright &#169; {currentYear}</span>
-      <span class="separator">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
-    </div>
+    <p class="copyright-wrapper">
+      Copyright &#169; {currentYear}
+      {SITE.author}. All rights reserved.
+    </p>
   </div>
 </footer>
 
 <style>
   footer {
     @apply w-full;
+  }
+  .footer-nav {
+    @apply pt-4 pb-2;
+  }
+  .footer-nav-list {
+    @apply flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-medium;
+  }
+  .footer-nav-list a {
+    @apply opacity-80 hover:opacity-100 hover:text-skin-accent transition-colors;
   }
   .footer-wrapper {
     @apply py-6 sm:py-4 flex flex-col sm:flex-row-reverse justify-between items-center;
@@ -37,9 +58,6 @@ const { noMarginTop = false } = Astro.props;
     @apply scale-125;
   }
   .copyright-wrapper {
-    @apply my-2 flex flex-col sm:flex-row items-center whitespace-nowrap;
-  }
-  .separator {
-    @apply hidden sm:inline;
+    @apply my-2 text-center text-sm opacity-80;
   }
 </style>
