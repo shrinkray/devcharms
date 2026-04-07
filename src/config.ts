@@ -43,6 +43,12 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
+    name: "DevTo",
+    href: "https://dev.to/shrinkray",
+    linkTitle: `${SITE.author} on dev.to`,
+    active: true,
+  },
+  {
     name: "Mail",
     href: "mailto:toledogeeks@gmail.com",
     linkTitle: `Send an email to ${SITE.author}`,

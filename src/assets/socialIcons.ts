@@ -47,6 +47,7 @@ const socialIcons: SocialIcons = {
     <line x1="12" y1="16" x2="12" y2="11"></line>
     <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
   </svg>`,
+  DevTo: `DEV`,
   Mail: `<svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon-tabler"
