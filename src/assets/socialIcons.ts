@@ -47,7 +47,44 @@ const socialIcons: SocialIcons = {
     <line x1="12" y1="16" x2="12" y2="11"></line>
     <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
   </svg>`,
-  DevTo: `DEV`,
+  DevTo: `<svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    viewBox="0 0 24 24"
+    stroke="none"
+  >
+    <line
+      x1="4"
+      y1="4"
+      x2="20"
+      y2="4"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <line
+      x1="4"
+      y1="20"
+      x2="20"
+      y2="20"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <text
+      x="12"
+      y="12"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Abel, system-ui, sans-serif"
+      font-size="11"
+      font-weight="200"
+      letter-spacing="0.8"
+      fill="currentColor"
+    >
+      DEV
+    </text>
+  </svg>`,
   Mail: `<svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon-tabler"

@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Abel";
+    src: url("../assets/fonts/Abel-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root,
   html[data-theme="light"] {
     --color-fill: 251, 254, 251;
