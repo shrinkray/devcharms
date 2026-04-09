@@ -3,12 +3,14 @@ import rss from "@astrojs/rss";
 import slugify from "@utils/slugify";
 import { allPosts } from "@utils/allPosts";
 
+export const prerender = true;
+
 export const GET = async () => {
   const items = await Promise.all(
     allPosts
       .filter(({ frontmatter }) => !frontmatter.draft)
       .map(async (post) => ({
-        link: `posts/${slugify(post.frontmatter)}`,
+        link: `/posts/${slugify(post.frontmatter)}`,
         title: post.frontmatter.title,
         description: post.frontmatter.description,
         pubDate: new Date(post.frontmatter.datetime),
