@@ -19,10 +19,17 @@ export const GET = async () => {
       })),
   );
 
+  const siteOrigin = SITE.website.replace(/\/$/, "");
+  const feedUrl = `${siteOrigin}/rss.xml`;
+
   return rss({
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
+    xmlns: {
+      atom: "http://www.w3.org/2005/Atom",
+    },
+    customData: `<atom:link href="${feedUrl}" rel="self" type="application/rss+xml"/>`,
     items,
   });
 };
