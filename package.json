@@ -20,7 +20,7 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.16",
     "@types/react-dom": "^18.3.7",
-    "astro": "^5.18.1",
+    "astro": "^6.1.6",
     "dotenv": "^16.6.1",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
