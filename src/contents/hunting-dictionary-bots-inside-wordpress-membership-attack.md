@@ -5,7 +5,10 @@ title: "Hunting Dictionary Bots: Inside a Sophisticated WordPress Membership Att
 slug: hunting-dictionary-bots-inside-wordpress-membership-attack
 featured: true
 draft: false
-tags: [security, wordpress, automation]
+tags:
+  - security
+  - wordpress
+  - automation
 ogImage: "/assets/og-dictionary-bots.png"
 description: Modern "dictionary bots" can bypass CAPTCHAs and WAFs to spam WordPress membership signups. Learn how the attack works—and how to block it in code.
 ---
