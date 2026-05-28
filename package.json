@@ -15,7 +15,8 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "cz": "cz",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "node scripts/ensure-vite-env-shim.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.16",
@@ -46,7 +47,8 @@
   },
   "overrides": {
     "lodash": "4.17.23",
-    "tmp": "0.2.5"
+    "tmp": "0.2.5",
+    "vite": "7.3.3"
   },
   "config": {
     "commitizen": {
