@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
@@ -10,11 +9,6 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   site: "https://devcharms.com/",
   integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       config: {
