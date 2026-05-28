@@ -63,7 +63,7 @@ const { activeNav } = Astro.props;
         </div>
       </button>
     </div>
-    <nav class="display-none sm:flex">
+    <nav class="hidden sm:flex">
       <ul>
         <li>
           <a href="/posts" class={activeNav === "posts" ? "active" : ""}
@@ -159,7 +159,7 @@ const { activeNav } = Astro.props;
     @apply fill-skin-base w-6 h-6 scale-125;
   }
   nav {
-    @apply w-full py-2 sm:py-0 sm:pr-4 flex flex-col items-center sm:justify-end sm:flex-row sm:space-x-4 bg-skin-fill;
+    @apply w-full py-2 sm:py-0 sm:pr-4 flex-col items-center sm:justify-end sm:flex-row sm:space-x-4 bg-skin-fill;
   }
   nav ul {
     @apply flex flex-col sm:flex-row sm:space-x-4;
@@ -216,27 +216,29 @@ const { activeNav } = Astro.props;
 
   const iconContainer = document.querySelector(".icon-container")?.classList;
   const firstLine = document.querySelector("#first-line")?.classList;
-  const secondLine = document.querySelector("#second-line ")?.classList;
+  const secondLine = document.querySelector("#second-line")?.classList;
   const thirdLine = document.querySelector("#third-line")?.classList;
 
   menuBtn!.addEventListener("click", function () {
-    if (navClassList?.contains("display-none")) {
-      navClassList?.remove("display-none");
+    if (navClassList?.contains("hidden")) {
+      navClassList?.remove("hidden");
+      navClassList?.add("flex");
 
       // icon animation
       iconContainer?.remove("flex");
       iconContainer?.add("relative");
       firstLine?.add("rotate-45", "absolute", "bottom-1/2");
-      thirdLine?.add("display-none");
+      thirdLine?.add("hidden");
       secondLine?.add("!w-full", "-rotate-45", "absolute", "bottom-1/2");
     } else {
-      navClassList?.add("display-none");
+      navClassList?.add("hidden");
+      navClassList?.remove("flex");
 
       // icon animation
       iconContainer?.add("flex");
       iconContainer?.remove("relative");
       firstLine?.remove("rotate-45", "absolute", "bottom-1/2");
-      thirdLine?.remove("display-none");
+      thirdLine?.remove("hidden");
       secondLine?.remove("!w-full", "-rotate-45", "absolute", "bottom-1/2");
     }
   });
