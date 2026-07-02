@@ -47,7 +47,7 @@ Attackers can't hack what they can't see. When you use port forwarding, your pub
 
 With a tunnel, your home setup is invisible to the public internet. Visitors only see Cloudflare's massive network. Think of Cloudflare as a highly trained security guard standing at the entrance of a gated community. If a bot or hacker tries to spam your site or send malicious traffic, the guard blocks them at the gate before they ever get near your actual home network.
 
-## Changing home addresses stop being a headache
+## Changing home addresses stops being a headache
 
 Every home internet connection has an IP address—think of it as your house's mailing address. However, home internet providers constantly change this address every few days or weeks (this is called a "dynamic IP"). If you are hosting a website, this means your site's address is constantly changing, making it impossible for people to reliably connect to it.
 
@@ -116,7 +116,7 @@ Once you do, you can log into your home router and lock every single inbound por
 
 <div class="grid grid-cols-1 sm:grid-cols-[1fr_2fr] gap-6 items-center mt-8">
   <div class="flex justify-center sm:justify-start">
-    <img src="/public/assets/customtunnel.webp" class="w-48 sm:w-full h-auto rounded" alt="Secure your website with Cloudflare Tunnels" />
+    <img src="/assets/customtunnel.webp" class="w-48 sm:w-full h-auto rounded" alt="Secure your website with Cloudflare Tunnels" />
   </div>
 
   <p class="w-full">
