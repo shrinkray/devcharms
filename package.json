@@ -19,7 +19,7 @@
     "postinstall": "node scripts/ensure-vite-env-shim.mjs"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.16",
+    "@astrojs/rss": "^4.0.19",
     "astro": "^6.4.6",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
