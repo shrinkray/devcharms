@@ -1,4 +1,12 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Ensure PATH includes Node/NVM/Homebrew for GUI Git clients (e.g., GitHub Desktop)
+if ! command -v npx >/dev/null 2>&1; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  export PATH="$PATH:/usr/local/bin:/opt/homebrew/bin:$HOME/Library/pnpm"
+fi
+
 npx lint-staged
+
