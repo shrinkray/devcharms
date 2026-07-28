@@ -14,7 +14,7 @@ ogImage: "/assets/taming-bottlenecks.webp"
 description: Learn how a custom WordPress network plugin resolves performance bottlenecks on a high-traffic multisite setup. Discover how early-exit bot firewalls block username enumeration attacks while targeted database pruning prevents WP-Cron option array bloat.
 ---
 
-![featured cover image illustrates turning server traffic chaos into an organized, protected system flow.](/assets/taming-bottlenecks.webp)
+![A featured cover illustration depicting server traffic flow transitioning from chaotic bot requests into an organized, protected network pipeline](/assets/taming-bottlenecks.webp)
 
 Managing high-traffic WordPress Multisite networks often reveals unique performance challenges. In large setups, standard off-the-shelf security or optimization plugins can introduce their own bloat, compounding the very issues they are meant to solve.
 
@@ -55,7 +55,7 @@ To solve these issues without adding third-party plugin overhead, we engineered 
 3. **Action Scheduler Retention:** Limits completed action log retention to 7 days (down from the 30-day default), keeping table sizes under control.
 4. **Threat Intelligence Integration:** Outbound links within the dashboard allow administrators to audit offending IP addresses directly on [AbuseIPDB](https://www.abuseipdb.com/).
 
-![key plugin features](/assets/perfguard-welcome.webp)
+![A screenshot of the UXPA Network Performance & Guard Suite welcome dashboard in WordPress admin, displaying key plugin feature cards for early-exit bot protection and cron optimization](/assets/perfguard-welcome.webp)
 
 ---
 
@@ -63,7 +63,7 @@ To solve these issues without adding third-party plugin overhead, we engineered 
 
 When an IP triggers our early-exit firewall, the dashboard provides direct lookup links to verify its threat profile before applying permanent edge or host-level blocks.
 
-![IP tracking and management](/assets/perfguard-dashboard.webp)
+![A screenshot of the IP security dashboard showing blocked request logs, AbuseIPDB confidence scores, and IP lookup controls for high-volume offending addresses](/assets/perfguard-dashboard.webp)
 
 For example, looking up an offending IP (`102.220.160.79`) shows a **100% Abuse Confidence Score** with 427 recent reports of failed WordPress logins and web application attacks. This confirms that the early-exit firewall is catching legitimate malicious actors.
 
@@ -98,7 +98,7 @@ The **Cron Health** tab provides immediate visibility into the underlying state 
 - **Duplicate Event Cap:** Enforces strict limits on repetitive hook registrations to prevent option row bloat.
 - **Manual Queue Purge:** Provides a one-click mechanism to purge historic Action Scheduler logs instantly.
 
-![cron health overview](/assets/perfguard-cronhealth.webp)
+![A screenshot of the Cron Health diagnostic interface displaying total active cron array size in kilobytes, event queue counts, and manual queue cleanup triggers](/assets/perfguard-cronhealth.webp)
 
 ---
 
