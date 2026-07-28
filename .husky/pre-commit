@@ -1,4 +1,26 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Ensure PATH includes Node/NVM/Homebrew for GUI Git clients (e.g., GitHub Desktop)
+if ! command -v npx >/dev/null 2>&1; then
+  # Prepend common Node, Homebrew, and pnpm binary paths
+  export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/Library/pnpm:$PATH"
+
+  # Append latest NVM node version path if present without requiring bash-only nvm.sh sourcing
+  if [ -d "$HOME/.nvm/versions/node" ]; then
+    latest_nvm_bin="$(ls -d "$HOME/.nvm/versions/node/"* 2>/dev/null | tail -n 1)/bin"
+    if [ -d "$latest_nvm_bin" ]; then
+      export PATH="$latest_nvm_bin:$PATH"
+    fi
+  fi
+
+  # Only source nvm.sh if running in bash or zsh (nvm.sh is not POSIX sh compatible)
+  if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  fi
+fi
+
 npx lint-staged
+
+
