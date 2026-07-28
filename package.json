@@ -3,7 +3,7 @@
   "version": "1.2.1",
   "private": false,
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -19,8 +19,9 @@
     "postinstall": "node scripts/ensure-vite-env-shim.mjs"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.16",
-    "astro": "^6.4.6",
+    "@astrojs/markdown-remark": "^7.2.2",
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^7.1.5",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "remark-collapse": "^0.1.2",
@@ -28,9 +29,9 @@
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.1.5",
-    "@astrojs/react": "^5.0.1",
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/partytown": "^2.1.7",
+    "@astrojs/react": "^6.0.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
@@ -47,8 +48,7 @@
   },
   "overrides": {
     "lodash": "4.17.23",
-    "tmp": "0.2.5",
-    "vite": "7.3.3"
+    "tmp": "0.2.5"
   },
   "config": {
     "commitizen": {
