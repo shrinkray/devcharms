@@ -100,17 +100,8 @@ Append this block to the bottom of the file:
 # Keep TMOUT shell-local so child subshells do not inherit it
 TMOUT=120
 
-# Preserve any pre-existing TRAPALRM handler
-if typeset -f TRAPALRM >/dev/null 2>&1 && ! typeset -f _previous_trapalrm >/dev/null 2>&1; then
-    functions -c TRAPALRM _previous_trapalrm
-fi
-
-TRAPALRM() {
-    # Execute existing handler first if one was defined
-    if typeset -f _previous_trapalrm >/dev/null 2>&1; then
-        _previous_trapalrm
-    fi
-
+# Screensaver core routine
+_zsh_screensaver() {
     # Ensure execution only occurs inside interactive shell prompts
     if [[ -o interactive ]]; then
         # Define candidate animation commands
@@ -129,6 +120,23 @@ TRAPALRM() {
         eval "$pick"
         clear
     fi
+}
+
+# Preserve any external TRAPALRM handler (refreshes if an external handler was edited)
+if typeset -f TRAPALRM >/dev/null 2>&1; then
+    case "$functions[TRAPALRM]" in
+        *_zsh_screensaver*) ;;
+        *) functions -c TRAPALRM _previous_trapalrm ;;
+    esac
+fi
+
+TRAPALRM() {
+    # Execute existing handler first; guard with || true to prevent aborts under ERR_RETURN / ERR_EXIT
+    if typeset -f _previous_trapalrm >/dev/null 2>&1; then
+        _previous_trapalrm || true
+    fi
+
+    _zsh_screensaver
 }
 ```
 
