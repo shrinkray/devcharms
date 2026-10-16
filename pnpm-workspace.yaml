@@ -1,0 +1,31 @@
+# pnpm 11 reads all settings from this file (not .npmrc).
+# Security posture: dependency install scripts are blocked unless listed in
+# allowBuilds, and brand-new releases are held back by a cooldown.
+
+minimumReleaseAge: 1440 # 24h cooldown before a fresh release can be installed
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false # default (true) would skip the check
+blockExoticSubdeps: true # no git/tarball transitive dependencies
+trustPolicy: no-downgrade
+trustLockfile: false # re-verify even when installing from the lockfile
+# semver@6.3.1 (transitive via @babel/core): legacy 6.x backport published 2023-07-10, after
+# 7.x releases that had provenance, so the downgrade check flags it. Known false positive
+# for old release lines. Version-pinned so every other version is still checked.
+trustPolicyExclude:
+  - semver@6.3.1
+
+strictDepBuilds: true # fail (don't warn) on unreviewed build scripts
+verifyDepsBeforeRun: error # never auto-install behind our back
+engineStrict: true # make package.json "engines" load-bearing
+
+# Only these dependencies may run install scripts. Populated from what the
+# first install actually blocked; a new native dependency will fail install
+# until it is reviewed and added here.
+allowBuilds:
+  esbuild: true # Vite/Astro bundling; validates its platform binary
+  sharp: true # Astro image pipeline (libvips binary)
+
+# Moved from package.json "overrides" (pnpm does not read npm's overrides).
+overrides:
+  lodash: 4.17.23
+  tmp: 0.2.5
