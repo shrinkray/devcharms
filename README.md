@@ -27,29 +27,38 @@ Live site: [devcharms.com](https://devcharms.com)
 
 ## Getting Started
 
-Requires **Node.js 22+**.
+Requires **Node.js 22+** and [pnpm](https://pnpm.io/) 11 (`corepack enable` picks up the version pinned in `package.json`).
 
 ```bash
 git clone https://github.com/shrinkray/devcharms.git
 cd devcharms
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 The dev server starts at [localhost:4321](http://localhost:4321) (Astro's default).
 
 ## Commands
 
-| Command                | Action                                     |
-| :--------------------- | :----------------------------------------- |
-| `npm install`          | Install dependencies                       |
-| `npm run dev`          | Start local dev server                     |
-| `npm run dev:host`     | Start dev server accessible on the network |
-| `npm run build`        | Build the production site to `./dist/`     |
-| `npm run preview`      | Preview the production build locally       |
-| `npm run format:check` | Check formatting with Prettier             |
-| `npm run format`       | Format files with Prettier                 |
-| `npm run cz`           | Commit with Commitizen                     |
+| Command             | Action                                     |
+| :------------------ | :----------------------------------------- |
+| `pnpm install`      | Install dependencies                       |
+| `pnpm dev`          | Start local dev server                     |
+| `pnpm dev:host`     | Start dev server accessible on the network |
+| `pnpm build`        | Build the production site to `./dist/`     |
+| `pnpm preview`      | Preview the production build locally       |
+| `pnpm format:check` | Check formatting with Prettier             |
+| `pnpm format`       | Format files with Prettier                 |
+| `pnpm cz`           | Commit with Commitizen                     |
+
+## Dependency security
+
+pnpm is configured in [`pnpm-workspace.yaml`](pnpm-workspace.yaml):
+
+- **Install scripts are blocked by default.** Only packages listed under `allowBuilds` (currently `esbuild`, `sharp`) may run them. With `strictDepBuilds`, adding a dependency that has a native build step makes `pnpm install` **fail** until you review it and add it to `allowBuilds`. That failure is the guardrail working.
+- **Release cooldown.** `minimumReleaseAge` refuses versions published in the last 24 hours. If an install fails on a very fresh version, the cooldown is doing its job: wait a day or take the previous version. Don't disable it.
+- **Overrides** (security pins for `lodash` and `tmp`) live under `overrides` in `pnpm-workspace.yaml`, not `package.json`.
+- `trustPolicyExclude` holds narrow, version-pinned exceptions to the trust-downgrade check, each with a note in the file. Remove them when they stop being needed.
 
 ## Project Structure
 

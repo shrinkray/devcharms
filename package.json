@@ -45,10 +45,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "overrides": {
-    "lodash": "4.17.23",
-    "tmp": "0.2.5"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -56,5 +52,6 @@
   },
   "lint-staged": {
     "*.{js,cjs,mjs,jsx,ts,tsx,json,css,md,yml,yaml,astro}": "prettier --write"
-  }
+  },
+  "packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1"
 }
