@@ -27,7 +27,7 @@ Live site: [devcharms.com](https://devcharms.com)
 
 ## Getting Started
 
-Requires **Node.js 22+** and [pnpm](https://pnpm.io/) 11 (`corepack enable` picks up the version pinned in `package.json`).
+Requires **Node.js 22.22+** and [pnpm](https://pnpm.io/) 11 (`corepack enable` picks up the version pinned in `package.json`).
 
 ```bash
 git clone https://github.com/shrinkray/devcharms.git

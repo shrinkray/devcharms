@@ -3,8 +3,8 @@
 
 # Ensure PATH includes Node/NVM/Homebrew for GUI Git clients (e.g., GitHub Desktop)
 if ! command -v pnpm >/dev/null 2>&1; then
-  # Prepend common Node, Homebrew, and pnpm binary paths
-  export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/Library/pnpm:$PATH"
+  # Prepend common Node, Homebrew, and pnpm binary paths (macOS and Linux)
+  export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/Library/pnpm:${PNPM_HOME:-$HOME/.local/share/pnpm}:$PATH"
 
   # Append latest NVM node version path if present without requiring bash-only nvm.sh sourcing
   if [ -d "$HOME/.nvm/versions/node" ]; then
