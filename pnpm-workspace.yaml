@@ -8,11 +8,10 @@ minimumReleaseAgeIgnoreMissingTime: false # default (true) would skip the check
 blockExoticSubdeps: true # no git/tarball transitive dependencies
 trustPolicy: no-downgrade
 trustLockfile: false # re-verify even when installing from the lockfile
-# tinyclip@0.1.13 (transitive via astro): 0.1.12 had a trusted publisher, 0.1.13 has
-# provenance attestation only. Maintainers are tinylibs/Astro; reviewed 2026-10-16.
-# Version-pinned so any other version is still checked. Remove once resolved past it.
+# semver@6.3.1 (transitive via @babel/core): legacy 6.x backport published 2023-07-10, after
+# 7.x releases that had provenance, so the downgrade check flags it. Known false positive
+# for old release lines. Version-pinned so every other version is still checked.
 trustPolicyExclude:
-  - tinyclip@0.1.13
   - semver@6.3.1
 
 strictDepBuilds: true # fail (don't warn) on unreviewed build scripts
