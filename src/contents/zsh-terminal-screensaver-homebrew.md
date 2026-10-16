@@ -72,6 +72,16 @@ Press `q` or `Ctrl + C` to exit any active animation (or tap any key if running 
 Zsh tracks idle time via the special shell integer variable `TMOUT`. When the terminal remains inactive at an empty prompt for the number of seconds defined by `TMOUT`, Zsh triggers an internal `ALRM` signal. The shell function `TRAPALRM()` intercepts this signal and executes custom commands.
 
 > **Good to know:** `TMOUT` only counts down while the shell is idle at an interactive prompt. It will never interrupt running builds, test suites, or active foreground processes.
+>
+> **Shell-local parameter:** Always set `TMOUT=120` without `export`. Exporting `TMOUT` into your environment causes child processes (such as `bash` scripts or subshells) to inherit the timeout without your `TRAPALRM` handler, causing them to terminate after 120 seconds of inactivity.
+
+Before configuring the trap, check if your shell already defines an existing `TRAPALRM` handler:
+
+```bash
+typeset -f TRAPALRM
+```
+
+If your terminal prints an existing function body (such as an auto-logout policy or a prompt redraw timer), you can chain it so both behaviors run without conflict.
 
 Open your Zsh configuration file:
 
@@ -87,9 +97,20 @@ Append this block to the bottom of the file:
 # ==========================================
 
 # Idle duration in seconds before trigger (120 = 2 minutes)
-export TMOUT=120
+# Keep TMOUT shell-local so child subshells do not inherit it
+TMOUT=120
+
+# Preserve any pre-existing TRAPALRM handler
+if typeset -f TRAPALRM >/dev/null 2>&1 && ! typeset -f _previous_trapalrm >/dev/null 2>&1; then
+    functions -c TRAPALRM _previous_trapalrm
+fi
 
 TRAPALRM() {
+    # Execute existing handler first if one was defined
+    if typeset -f _previous_trapalrm >/dev/null 2>&1; then
+        _previous_trapalrm
+    fi
+
     # Ensure execution only occurs inside interactive shell prompts
     if [[ -o interactive ]]; then
         # Define candidate animation commands
@@ -160,9 +181,9 @@ reset
 Validate your implementation:
 
 1. **Syntax check:** Run `typeset -f TRAPALRM` in your shell. The terminal must print the function body defined in your `.zshrc`.
-2. **Idle execution:** Set `export TMOUT=5` temporarily in your active terminal. Wait five seconds. Confirm execution of a randomized animation.
+2. **Idle execution:** Set `TMOUT=5` temporarily in your active terminal. Wait five seconds. Confirm execution of a randomized animation.
 3. **Cursor persistence:** Terminate the animation. Verify that your command prompt returns cleanly with a visible cursor.
-4. **Clean profile:** Reset `export TMOUT=120` for routine daily use.
+4. **Clean profile:** Reset `TMOUT=120` for routine daily use.
 
 ## Pro-tip: Temporarily disabling the screensaver
 
@@ -173,7 +194,7 @@ If you are giving a live demo, screen sharing, or recording a tutorial, you migh
 unset TMOUT
 
 # Re-enable when finished
-export TMOUT=120
+TMOUT=120
 ```
 
 ## Summary
