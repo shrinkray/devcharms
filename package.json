@@ -18,9 +18,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.2",
+    "@astrojs/markdown-remark": "^7.3.3",
     "@astrojs/rss": "^4.0.19",
-    "astro": "^7.1.5",
+    "astro": "^7.4.0",
     "fuse.js": "^6.6.2",
     "github-slugger": "^2.0.0",
     "remark-collapse": "^0.1.2",
@@ -28,11 +28,11 @@
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.1.7",
-    "@astrojs/react": "^6.0.2",
-    "@astrojs/sitemap": "^3.7.3",
-    "@tailwindcss/typography": "^0.5.19",
-    "@types/react": "^18.3.28",
+    "@astrojs/partytown": "^2.1.8",
+    "@astrojs/react": "^7.1.0",
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "autoprefixer": "^10.4.21",
     "commitizen": "^4.2.4",
@@ -40,7 +40,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^16.4.0",
     "postcss": "^8.5.6",
-    "prettier": "^3.8.1",
+    "prettier": "^3.9.10",
     "prettier-plugin-astro": "^0.14.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
