@@ -69,7 +69,7 @@ const featuredPosts = sortedPosts.filter(
             <ul>
               {featuredPosts.map(({ frontmatter }) => (
                 <Card
-                  href={`/posts/${slugify(frontmatter)}`}
+                  href={`/posts/${slugify(frontmatter)}/`}
                   post={frontmatter}
                   secHeading={false}
                 />
@@ -89,7 +89,7 @@ const featuredPosts = sortedPosts.filter(
             ({ frontmatter }, index) =>
               index < 4 && (
                 <Card
-                  href={`/posts/${slugify(frontmatter)}`}
+                  href={`/posts/${slugify(frontmatter)}/`}
                   post={frontmatter}
                   secHeading={false}
                 />
@@ -98,7 +98,7 @@ const featuredPosts = sortedPosts.filter(
         }
       </ul>
       <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts">
+        <LinkButton href="/posts/">
           All Posts
           <svg xmlns="http://www.w3.org/2000/svg"
             ><path
