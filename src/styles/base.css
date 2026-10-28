@@ -125,6 +125,21 @@
 }
 
 @layer components {
+  .prose pre {
+    @apply !bg-skin-card;
+  }
+  html[data-theme="light"] .prose pre {
+    background-color: #f4f4f4 !important;
+  }
+  .theme-img--dark {
+    @apply hidden;
+  }
+  html[data-theme="dark"] .theme-img--light {
+    @apply hidden;
+  }
+  html[data-theme="dark"] .theme-img--dark {
+    @apply block;
+  }
   .display-none {
     @apply hidden;
   }
