@@ -9,6 +9,7 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: "https://devcharms.com/",
+  trailingSlash: "always",
   integrations: [
     partytown({
       // Adds dataLayer.push as a forwarding-event.

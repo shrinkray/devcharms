@@ -66,27 +66,27 @@ const { activeNav } = Astro.props;
     <nav class="hidden sm:flex">
       <ul>
         <li>
-          <a href="/posts" class={activeNav === "posts" ? "active" : ""}
+          <a href="/posts/" class={activeNav === "posts" ? "active" : ""}
             >Posts</a
           >
         </li>
         <li>
-          <a href="/tags" class={activeNav === "tags" ? "active" : ""}>Tags</a>
+          <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>Tags</a>
         </li>
         <li>
-          <a href="/charms" class={activeNav === "charms" ? "active" : ""}
+          <a href="/charms/" class={activeNav === "charms" ? "active" : ""}
             >Charms</a
           >
         </li>
         <li>
-          <a href="/about" class={activeNav === "about" ? "active" : ""}
+          <a href="/about/" class={activeNav === "about" ? "active" : ""}
             >About</a
           >
         </li>
       </ul>
       <div class="button-wrapper">
         <LinkButton
-          href="/search"
+          href="/search/"
           className={`focus-outline p-3 sm:p-1 ${
             activeNav === "search" ? "active" : ""
           }`}

@@ -81,8 +81,10 @@ export const GET = async () => {
     allPosts
       .filter(({ frontmatter }) => !frontmatter.draft)
       .map(async (post) => {
+        // Canonical post URLs end with a slash. Without it the site returns
+        // 308, and importers that do not follow that redirect fail the item.
         const postUrl = new URL(
-          `/posts/${slugify(post.frontmatter)}`,
+          `/posts/${slugify(post.frontmatter)}/`,
           siteOrigin,
         ).toString();
 
